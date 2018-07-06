@@ -15,15 +15,15 @@
     $('#banner1').myscroll();
 
 ## API
-    picEl: $('#move'),  图片父级，不传默认为banner内第1个div
-    ctrlEl: $('#ctrl'),  控制条父级，包括小圆点和左右箭头，不传默认为banner内第2个div
-    libs: true,  是否创建底部小圆点，true || false,不传默认true
-    arrows: true,  是否创建左右箭头，true || false,不传默认true
-    autoPlay: true,  是否自动播放，true || false,不传默认true
-    time: 1000,  自动播放间隔时间，true || false,不传默认2000
-    speed: 400,  图片切换速度，不传默认400
-    effect: 'left',  轮播的改变方式 top||left||fade，不传默认left
-    hover: false  是否移入banner显示左右箭头 true || false 不传默认true
+    1.picEl: $('#move'),  图片父级，不传默认为banner内第1个div
+    2.ctrlEl: $('#ctrl'),  控制条父级，包括小圆点和左右箭头，不传默认为banner内第2个div
+    3.libs: true,  是否创建底部小圆点，true || false,不传默认true
+    4.arrows: true,  是否创建左右箭头，true || false,不传默认true
+    5.autoPlay: true,  是否自动播放，true || false,不传默认true
+    6.time: 1000,  自动播放间隔时间，true || false,不传默认2000
+    7.speed: 400,  图片切换速度，不传默认400
+    8.effect: 'left',  轮播的改变方式 top||left||fade，不传默认left
+    9.hover: false  是否移入banner显示左右箭头 true || false 不传默认true
 
 ## 兼容
 1. IE7+
