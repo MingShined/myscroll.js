@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>myscroll</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<style type="text/css">
+/*基础样式 此部分样式为插件展示页的一些样式，使用插件时不会理会，引入上方的link即可*/
+
+body {
+    background-color: #1B1B1B;
+    text-align: center;
+    color: #fff;
+    font-family: 微软雅黑;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: top;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+ul li {
+    list-style: none;
+}
+
+.banner {
+    display: inline-block;
+}
+
+#banner1 p {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .2);
+    line-height: 50px;
+}
+
+.desc {
+    text-align: center;
+}
+
+.desc pre {
+    color: #fff;
+    display: inline-block;
+    text-align: left;
+    font: 14px 微软雅黑;
+}
+
+.tips {
+    padding-bottom: 50px;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.tips li {
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 6px 3px #ddd;
+}
+
+#ctrl {
+    text-align: left;
+}
+
+#ctrl2 {
+    text-align: right;
+}
+</style>
+
+<body>
+    <div class="desc">
+        <pre>    
+        <h1>HTML结构</h1>
+        &lt;div class="banner"&gt;
+            &lt;!-- 添加图片 --&gt;
+            &lt;div class="move" id="move"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;img src="images/a1.png" alt=""&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="images/a2.png" alt=""&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="images/a3.png" alt=""&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="images/a4.png" alt=""&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;img src="images/a5.png" alt=""&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;!-- 添加控制条 --&gt;
+            &lt;div class="ctrl" id="ctrl"&gt;&lt;/div&gt;
+        &lt;/div&gt;</pre>
+        <pre>        
+        <h1>JS调用</h1>
+        $('#banner1').myscroll({
+            picEl: $('#move'), //图片父级，不传默认为banner内第1个div
+            ctrlEl: $('#ctrl'), //控制条父级，包括小圆点和左右箭头，不传默认为banner内第2个div
+            libs: true, //是否创建底部小圆点，true || false,不传默认true
+            arrows: true, //是否创建左右箭头，true || false,不传默认true
+            autoPlay: true, //是否自动播放，true || false,不传默认true
+            time: 2000, //自动播放间隔时间，true || false,不传默认2000
+            speed: 400, //图片切换速度，不传默认400
+            effect: 'left', //轮播的改变方式 top || left || fade，不传默认left
+            hover: true // 是否移入banner显示左右箭头 true || false 不传默认true
+        });</pre>
+    </div>
+
+
+    <div class="banner" id="banner1">
+        <div class="move" id="move">
+            <ul>
+                <li><p>D.VA 爱你呦</p><img src="images/a1.png" alt="" width="450" height="260"></li>
+                <li><p>黑夜就是我的面纱</p><img src="images/a2.png" alt="" width="450" height="260"></li>
+                <li><p>竜神の剣を喰らえ</p><img src="images/a3.png" alt="" width="450" height="260"></li>
+                <li><p>I GOT YOU IN MY SIGHT</p><img src="images/a4.png" alt="" width="450" height="260"></li>
+                <li><p>离开你我才发现自己，那爱笑的眼睛</p><img src="images/a5.png" alt="" width="450" height="260"></li>
+            </ul>
+        </div>
+        <div class="ctrl" id="ctrl"></div>
+    </div>
+
+
+    <div class="banner" id="banner2">
+        <div class="move" id="move1">
+            <ul>
+                <li><img src="images/a1.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a2.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a3.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a4.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a5.png" alt="" width="450" height="260"></li>
+            </ul>
+        </div>
+        <div class="ctrl" id="ctrl1"></div>
+    </div>
+
+
+    <div class="banner" id="banner3">
+        <div class="move" id="move2">
+            <ul>
+                <li><img src="images/a1.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a2.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a3.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a4.png" alt="" width="450" height="260"></li>
+                <li><img src="images/a5.png" alt="" width="450" height="260"></li>
+            </ul>
+        </div>
+        <div class="ctrl" id="ctrl2"></div>
+    </div>
+    
+    <h2>参数详细说明</h2>
+    <div class="tips">
+        <ul>
+            <li>可以使用参数默认值简单调用：$('#banner2').myscroll();</li>
+            <li>不仅可用作轮播图、焦点图、也可以用作tab切换卡等功能,即更改li内相应的结构即可</li>
+            <li>默认向底部libs写入单独类名，lib1，lib2，lib3，可用于自定义样式,当前索引的类名为active,具体可在调用后查看dom结构</li>
+            <li>默认向左右箭头添加内容<>,若使用图片自定义箭头样式，在css内写入font-size：0;箭头即可消失</li>
+            <li>默认移入小圆点和左右箭头清除定时器，需要移入banner清除自行更改源码或联系我</li>
+            <li>需要更改底部lib显示位置，在css选择器ctrl中更改text-align值即可</li>
+            <li>插件是免费的，麻烦各位大神帮忙给本人GitHub点个star(*￣︶￣),谢谢
+            <a href="https://github.com/MingShined" target="_blank">我是地址</a></li>
+        </ul>
+    </div>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/myscroll.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        // 调用
+        $('#banner1').myscroll({
+            picEl: $('#move'), //图片父级，不传默认为banner内第1个div
+            ctrlEl: $('#ctrl'), //控制条父级，包括小圆点和左右箭头，不传默认为banner内第2个div
+            libs: true, //是否创建底部小圆点，true || false,不传默认true
+            arrows: true, //是否创建左右箭头，true || false,不传默认true
+            autoPlay: true, //是否自动播放，true || false,不传默认true
+            time: 1000, //自动播放间隔时间，true || false,不传默认2000
+            speed: 400, //图片切换速度，不传默认400
+            effect: 'left', //轮播的改变方式 top||left||fade，不传默认left
+            hover: false // 是否移入banner显示左右箭头
+        });
+        $('#banner2').myscroll({
+            effect: 'top'
+        });
+        $('#banner3').myscroll({
+            time:1500,
+            effect: 'fade'
+        });
+    })
+    </script>
+</body>
+
+</html>
