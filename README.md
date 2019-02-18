@@ -12,7 +12,7 @@
 ### [预览地址](http://www.jq22.com/yanshi17444)
 
 ## 使用示例
-    $('#banner1').myscroll();
+    $('#banner').myscroll();
 
 ## API
     1.picEl: $('#move'),  图片父级，不传默认为banner内第1个div
